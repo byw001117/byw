@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$" />
+  </component>
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/spring_dubbo_poi_api/pom.xml" />
+        <option value="$PROJECT_DIR$/spring_dubbo_poi_anntion/pom.xml" />
+        <option value="$PROJECT_DIR$/spring_dubbo_poi_consumer_anntion/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot_highcharts/pom.xml" />
+        <option value="$PROJECT_DIR$/shiro_api/pom.xml" />
+        <option value="$PROJECT_DIR$/shiro_anntion/pom.xml" />
+        <option value="$PROJECT_DIR$/shiro_consumer_anntion/pom.xml" />
+        <option value="$PROJECT_DIR$/shiro_demo/pom.xml" />
+        <option value="$PROJECT_DIR$/spring_solr_demo/pom.xml" />
+        <option value="$PROJECT_DIR$/spring_solr_zy/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>

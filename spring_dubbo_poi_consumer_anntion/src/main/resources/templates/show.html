@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- 引入EasyUI的样式文件-->
+    <link rel="stylesheet"
+          href="../EasyUI/themes/default/easyui.css" type="text/css"/>
+
+    <!-- 引入EasyUI的图标样式文件-->
+    <link rel="stylesheet"
+          href="../EasyUI/themes/icon.css" type="text/css"/>
+</head>
+<body>
+<form id="importId" action="../user/importExcel" method="post" enctype="multipart/form-data">
+    <input type="file" name="file"><br>
+    <input type="submit" value="上传">
+
+</form>
+
+<a id="export" href="../user/export" >导出</a>
+<table id="UserTable"></table>
+
+<script type="text/javascript"
+        src="../EasyUI/jquery.min.js"></script>
+
+<!-- 引入EasyUI -->
+<script type="text/javascript"
+        src="../EasyUI/jquery.easyui.min.js"></script>
+
+<!-- 引入EasyUI的中文国际化js，让EasyUI支持中文 -->
+<script type="text/javascript"
+        src="../EasyUI/locale/easyui-lang-zh_CN.js"></script>
+
+<script type="text/javascript">
+    $(function(){
+        initUserTable();
+    })
+
+    function initUserTable(){
+        $("#UserTable").datagrid({
+            url:'../user/queryUser',
+            columns:[
+                [{field:'check',checkbox:true},
+                    {title:"id",field:"userid"},
+                    {title:"姓名",field:"username"},
+                    {field:'usertime',title:'时间',width:100,align:'right',
+                        formatter: function(value,row,index){
+                            var date =new Date(value);
+                            var tol=date.toLocaleDateString(date);
+                            return tol;
+                        }
+                    },
+                    {title:"性别",field:"usersex",formatter:function(value,rows,index){
+                            var a="";
+                            if(rows.usersex==1){
+                                a='男'
+                            }else{
+                                a='女';
+                            }
+                            return a;
+                        }},
+
+                ]
+            ]
+        })
+    }
+</script>
+</body>
+</html>

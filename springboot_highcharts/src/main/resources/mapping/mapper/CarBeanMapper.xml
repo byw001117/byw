@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jk.mapper.CarBeanMapper" >
+  <resultMap id="BaseResultMap" type="com.jk.model.CarBean" >
+    <id column="carid" property="carid" jdbcType="INTEGER" />
+    <result column="carname" property="carname" jdbcType="VARCHAR" />
+    <result column="carsales" property="carsales" jdbcType="VARCHAR" />
+    <result column="cartime" property="cartime" jdbcType="DATE" />
+    <result column="typeid" property="typeid" jdbcType="INTEGER" />
+  </resultMap>
+
+  <select id="queryCar" resultType="java.util.LinkedHashMap">
+    select sum(carsales)  销量,typeid 类型 ,DATE_FORMAT(cartime,'%m')  月份 from t_car group by DATE_FORMAT(cartime,'%2019-%m')
+  </select>
+
+  <select id="queryCarAll" resultType="java.util.LinkedHashMap">
+    select COUNT(*) count,DATE_FORMAT(carTime,'%Y-%m') time  from t_car GROUP BY DATE_FORMAT(carTime,'%Y-%m')
+  </select>
+
+
+</mapper>
